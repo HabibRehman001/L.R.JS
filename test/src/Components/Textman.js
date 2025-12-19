@@ -3,12 +3,10 @@ export default function Textman() {
   const [oldText, newText] = useState("");
   const chnge = (e) => {
     newText(e.target.value);
-    console.log("chnge");
   };
   const clear = () => {
     let empty = "";
     newText(empty);
-    console.log("done");
   };
   const upper = () => {
     let upperTrans = oldText.toUpperCase();
@@ -42,6 +40,12 @@ export default function Textman() {
             Lower Case
           </button>
         </div>
+        <p> {oldText.length} characters </p>
+        <p> {(oldText.split(" ").length)-1 } words </p>
+        <h2>Preview</h2>
+        <p className="prev_para">
+          {oldText}
+        </p>
       </div>
     </>
   );

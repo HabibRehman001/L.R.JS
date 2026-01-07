@@ -21,7 +21,9 @@ function Ccounter() {
         setinptValue(0);
         setbtn(false);
         setAlert('')
-        setNumber(1)
+        setNumber(1
+            
+        )
     };
 
     return (

@@ -6,6 +6,8 @@ import TextHandaling from './Components/TextHandaling';
 import Btnhandle from './Components/btnhandle';
 import Colorchnge from './Components/colorchnge';
 import Ccounter from './Components/Ccounter';
+import Stdlist from './Components/Stdlist';
+import Timer from './Components/Timer';
 function App() {
   return (
     <>
@@ -15,7 +17,9 @@ function App() {
     {/* <TextHandaling/> */}
     {/* <Btnhandle /> */}
     {/* <Colorchnge/> */}
-    <Ccounter/>
+    {/* <Ccounter/> */}
+    {/* <Stdlist/> */}
+        <Timer/>
     </>
   );
 }

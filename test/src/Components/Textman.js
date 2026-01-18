@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-export default function Textman() {
+export default function Textman(props) {
   const [oldText, newText] = useState("");
   const chnge = (e) => {
     newText(e.target.value);
@@ -18,9 +18,9 @@ export default function Textman() {
   };
   return (
     <>
-      <div className="container">
-        <div className="mb-3">
-          <label htmlFor="exampleFormControlTextarea1" className="form-label">
+      <div className={`container my-4 text-${props.mode == 'light'?'dark':'light'}`}>
+        <div className={`mb-3 text-${props.mode == 'light'?'dark':'light'}`}>
+          <label htmlFor="exampleFormControlTextarea1"className="form-label" id="txtArea">
             Example textarea
           </label>
           <textarea

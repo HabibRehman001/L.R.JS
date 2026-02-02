@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Timer() {
+function Timer(props) {
   const [showInput, setShowInput] = useState(true);
   const [value, setValue] = useState('');
   const [showTimer, setShowTimer] = useState(false);
@@ -13,9 +13,9 @@ function Timer() {
       let id = setInterval(() => {
         setValue(prev => {
           if (prev <= 1) {
-            clearInterval(id);          // stop timer
-            setShowTimer(false);        // hide countdown
-            setShowTimesUp(true);       // show TimesUp message
+            clearInterval(id);       
+            setShowTimer(false);        
+            setShowTimesUp(true);       
             return 0;
           }
           return prev - 1;
@@ -37,15 +37,15 @@ function Timer() {
 
   return (
     <div>
-      <h2 style={{ textAlign: 'center', margin: '40px' }}>Online Countdown Timer</h2>
+      <h2 style={{ textAlign: 'center', margin: '40px' ,color : props.mode == 'light' ? 'black':'white'}}>Online Countdown Timer</h2>
 
       {showInput && (
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center'}}>
           <input
             type="number"
             value={value}
             onChange={handleChange}
-            style={{ height: '50px', width: '150px', borderRadius: '8px' }}
+            style={{ height: '50px', width: '150px', borderRadius: '8px',border:props.mode == 'dark'?'3px solid black':"1px solid black", backgroundColor : props.mode == 'dark' ? 'grey':'white' }}
           />
           <br />
           <button onClick={startTimer} className='btn btn-success mx-3 my-3' style={{ width: '150px' }}>
